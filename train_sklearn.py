@@ -60,7 +60,7 @@ class SklearnTrainer():
 
     def get_data(self):
                           
-             local_dataset_path = Path(Dataset.get(dataset_project="sarcasm_detector",
+             local_dataset_path = Path(Dataset.get(
                                                    dataset_name="sarcasm_dataset",
                                                    dataset_id="08ee49c875c74dc89eb35daeef245468",
                                                    alias="sarcasm_dataset").get_local_copy())
