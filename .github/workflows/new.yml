@@ -18,8 +18,8 @@ jobs:
           echo '![](./sklearn_confusion_matrix/confusion_matrix.png "Confusion Matrix")' >> report.md
           cml comment create report.md
       
-      - uses: allegroai/clearml-github-action@v1
       - name: setup-clearml
+      - uses: allegroai/clearml-github-action@v1
         with:
           access_key: ${{ secrets.CLEARML_ACCESS_KEY }}
           secret_key: ${{ secrets.CLEARML_SECRET_KEY }}
