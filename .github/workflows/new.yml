@@ -9,12 +9,6 @@ jobs:
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.CML_TOKEN }}
-      
-      - uses: allegroai/clearml-github-action@v1
-      - name: setup-clearml
-        with:
-          access_key: ${{ secrets.CLEARML_ACCESS_KEY }}
-          secret_key: ${{ secrets.CLEARML_SECRET_KEY }}
         run: |
           pip install -r requirements.txt
           python train_sklearn.py  # generate plot.png
@@ -23,3 +17,10 @@ jobs:
           cat sklearn_metrics.txt >> report.md
           echo '![](./sklearn_confusion_matrix/confusion_matrix.png "Confusion Matrix")' >> report.md
           cml comment create report.md
+      
+      - uses: allegroai/clearml-github-action@v1
+      - name: setup-clearml
+        with:
+          access_key: ${{ secrets.CLEARML_ACCESS_KEY }}
+          secret_key: ${{ secrets.CLEARML_SECRET_KEY }}
+        
