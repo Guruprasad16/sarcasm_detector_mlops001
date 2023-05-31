@@ -61,7 +61,6 @@ class SklearnTrainer():
     def get_data(self):
                           
              local_dataset_path = Path(Dataset.get(
-                                                   dataset_name="sarcasm_dataset",
                                                    dataset_id="08ee49c875c74dc89eb35daeef245468",
                                                    alias="sarcasm_dataset").get_local_copy())
              data_files=[str(local_dataset_path / csv_path) for csv_path in os.listdir(local_dataset_path)]
