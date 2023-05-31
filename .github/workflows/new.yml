@@ -9,14 +9,14 @@ jobs:
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.CML_TOKEN }}
-          web_server: https://app.clear.ml
-          api_server: https://api.clear.ml
-          files_server: https://files.clear.ml
+      
+      - uses: allegroai/clearml-github-action@v1
+      - name: setup-clearml
+        with:
           access_key: ${{ secrets.CLEARML_ACCESS_KEY }}
           secret_key: ${{ secrets.CLEARML_SECRET_KEY }}
         run: |
           pip install -r requirements.txt
-          clearml-init
           python train_sklearn.py  # generate plot.png
 
           # Create CML report
