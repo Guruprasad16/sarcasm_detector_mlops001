@@ -23,4 +23,6 @@ jobs:
         with:
           access_key: ${{ secrets.CLEARML_ACCESS_KEY }}
           secret_key: ${{ secrets.CLEARML_SECRET_KEY }}
+        run: |
+          clearml-init
         
