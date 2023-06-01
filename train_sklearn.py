@@ -61,7 +61,8 @@ class SklearnTrainer():
     def get_data(self):
                           
              local_dataset_path = Path(Dataset.get(
-                                                   dataset_id="08ee49c875c74dc89eb35daeef245468",
+                                                   ddataset_project="sarcasm_detector",
+                                                   dataset_name="sarcasm_dataset",
                                                    alias="sarcasm_dataset"
                                                    ).get_local_copy())
              data_files=[str(local_dataset_path / csv_path) for csv_path in os.listdir(local_dataset_path)]
@@ -121,7 +122,7 @@ class SklearnTrainer():
             ["NORMAL", "SARCASTIC"],
             figsize=(8, 8),
             title=f"{self.model} Confusion Matrix",
-            path_to_save_fig="./sklearn_confusion_matrix"
+            path_to_save_fig="./sklearn_confusion_matrix.png"
             #sana added line above
         )
 

@@ -22,7 +22,11 @@ import datetime
 def get_model_And_tokenizer(trainig_task_id):
 
     train_task = Task.get_task(trainig_task_id)
+    print("train_task",train_task)
     transformer_model_path = train_task.models.data['output'][0].get_local_copy()
+    output = train_task.models.data['output'][0]
+    print("output-----",output)
+    print("transformer_model_path",transformer_model_path)
     model = tf.keras.models.load_model(transformer_model_path)
 
     tokenizer_path  = train_task.artifacts['local file'].get_local_copy()
