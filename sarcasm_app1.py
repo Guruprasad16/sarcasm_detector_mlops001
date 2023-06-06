@@ -35,12 +35,11 @@ def get_model_And_tokenizer(trainig_task_id):
 
     return model, tokenizer
 
-model, tokenizer = get_model_And_tokenizer('be3d33a07ff7459da8f1de3ca762a4dd')
+model, tokenizer = get_model_And_tokenizer('0628a88df5bb48eb91d58982bb421bcd')
 
-sklearn_model_path = Model(model_id="656cb274b4044ccbb0260d3cae62449c").get_local_copy()
+sklearn_model_path = Model(model_id="8c186c7a599543cd9fd7a908ac7fba9a").get_local_copy()
 
 sklearn_pipeline = joblib.load(sklearn_model_path)
-
 
 def classify_DNN(sentence):
     start = time.time()
@@ -142,14 +141,14 @@ def generate_file_name():
 # Function to push the file to GitHub
 def push_file_to_github():
     # GitHub repository details
-    repo_owner = 'Sana555-Attar'
+    repo_owner = 'Guruprasad16'
     repo_name = 'sarcasm_detector_mlops001'
     branch_name = 'main'
     file_path = "myfile1.txt"
     folder_name = "updated_new_version_data"
 
     # GitHub access token (you can generate one in your GitHub account settings)
-    access_token = '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'
+    access_token = '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'
 
     # Create a PyGithub instance using the access token
     g = Github(access_token)
